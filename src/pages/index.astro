@@ -12,20 +12,55 @@
 			* {
 				margin: 0;
 				padding: 0;
-				box-sizing: border-box;	
+				box-sizing: border-box;
+			}	
 
-			body {
+			body{
 				height: 100vh;
 				width: 100vw;
-				display: grid;
-				place-items: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 
 				.makan {
 					height: 100px;
 					width: 200px;
 					background-color: salmon;
+					position: relative;
+					overflow: hidden;
 				}
+
+			.makan::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background-color: #FAC473;
+				width: 0;
+				transition: all 300ms ease-out;
+			}
+
+			.makan::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background-color: #FA73A9;
+				width: 0;
+				transition: all 200ms ease-out 100ms;
+			}
+
+			.makan:hover::before {
+				width: 100%;
+			}
+
+			.makan:hover::after {
+				width: 100%;
 			}
 		</style>
 	</head>
